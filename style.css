@@ -1,0 +1,137 @@
+body {
+  display: flex;
+  background-color: black;
+  text-align: center;
+  justify-content: center;
+}
+
+:root {
+  --flight-max-altitude: -16%;
+  --flight-min-altitude: calc(0% - var(--flight-max-altitude));
+  --flight-up-tilt: 0.08turn;
+  --flight-down-tilt: calc(0turn - var(--flight-up-tilt));
+  --x-adjustment: 1.5%;
+}
+
+.imagecontainter svg {
+  width: 100%;
+}
+
+#witch-and-cat {
+  animation: flight-altitude 3500ms ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: 35% 10%;
+}
+
+@keyframes flight-altitude {
+  0% {
+    transform: translateY(var(--flight-max-altitude))
+      translateX(calc(var(--flight-min-altitude) - var(--x-adjustment)))
+      rotateZ(var(--flight-up-tilt));
+  }
+  50% {
+    transform: translateY(var(--flight-min-altitude))
+      translateX(calc(var(--flight-max-altitude) - var(--x-adjustment)))
+      rotateZ(var(--flight-down-tilt));
+  }
+  100% {
+    transform: translateY(var(--flight-max-altitude))
+      translateX(calc(var(--flight-min-altitude) - var(--x-adjustment)))
+      rotateZ(var(--flight-up-tilt));
+  }
+}
+
+#cloud-1 {
+  animation: cloud-1 6s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloud-1 {
+  0% {
+    transform: translatex(-100%);
+  }
+
+  50% {
+    transform: translatex(0%);
+  }
+
+  100% {
+    transform: translatex(100%);
+  }
+}
+
+#cloud-2 {
+  animation: cloud-2 4s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloud-2 {
+  0% {
+    transform: translatex(-100%);
+  }
+
+  50% {
+    transform: translatex(0%);
+  }
+
+  100% {
+    transform: translatex(100%);
+  }
+}
+
+#cloud-3 {
+  animation: cloud-3 5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloud-3 {
+  0% {
+    transform: translatex(-100%);
+  }
+
+  50% {
+    transform: translatex(0%);
+  }
+
+  100% {
+    transform: translatex(100%);
+  }
+}
+
+#moon {
+  animation: moon 3500ms ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moon {
+  0% {
+    transform: translateY(2%);
+  }
+
+  50% {
+    transform: translateY(-2%);
+  }
+
+  100% {
+    transform: translateY(2%);
+  }
+}
+
+#stars {
+  animation: stars 3500ms ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes stars {
+  0% {
+    transform: translateY(1%);
+  }
+
+  50% {
+    transform: translateY(-1%);
+  }
+
+  100% {
+    transform: translateY(1%);
+  }
+}
