@@ -140,6 +140,7 @@ body {
 
 footer a {
   font-family: cursive;
+  display: block;
   color: white;
   text-decoration: none;
   font-weight: bold;
